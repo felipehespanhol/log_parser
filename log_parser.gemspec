@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rspec", "~> 3.2"
   spec.add_development_dependency "standard", "~> 1.0"
+  spec.add_development_dependency "pry", "~> 0.13"
 end
