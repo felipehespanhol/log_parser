@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/log_parser/cli"
+
+begin
+  LogParser::Cli.new(log_file: ARGV[0], output: $stdout).call
+rescue LogParser::Cli::FileDoesNotExist => e
+  $stdout.puts "File #{ARGV[0]} could not be found."
+rescue LogParser::PageViewParser::ParseError => e
+  $stdout.puts "Error parsing file."
+end
