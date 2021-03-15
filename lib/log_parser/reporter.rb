@@ -10,6 +10,8 @@ module LogParser
 
     private
 
+    attr_reader :storage
+
     def total_page_views_string
       page_view_list(
         title: "Total page views",
@@ -36,9 +38,5 @@ module LogParser
         #{page_views_list}
       OUTPUT
     end
-
-    private
-
-    attr_reader :storage
   end
 end
