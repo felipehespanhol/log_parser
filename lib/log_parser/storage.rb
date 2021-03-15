@@ -9,7 +9,7 @@ module LogParser
         path = page_views[0]
         count = page_views[1].size
         acc[path] = count
-      end.sort_by { |k, v| -v }
+      end.sort_by { |k, v| -v }.to_h
     end
 
     def unique_page_views
@@ -17,7 +17,7 @@ module LogParser
         path = page_views[0]
         count = page_views[1].uniq(&:ip).size
         acc[path] = count
-      end.sort_by { |k, v| -v }
+      end.sort_by { |k, v| -v }.to_h
     end
 
     private
