@@ -6,8 +6,6 @@ module LogParser
   class Cli
     class FileDoesNotExist < StandardError; end
 
-    attr_reader :file_contents, :output
-
     def initialize(log_file:, output: $stdout)
       @file_contents = read_log_file(log_file)
       @output = output
@@ -21,6 +19,8 @@ module LogParser
     end
 
     private
+
+    attr_reader :file_contents, :output
 
     def read_log_file(log_file)
       File.read(log_file)

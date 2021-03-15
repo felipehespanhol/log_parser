@@ -1,7 +1,5 @@
 module LogParser
   class Reporter
-    attr_reader :storage
-
     def initialize(storage:)
       @storage = storage
     end
@@ -38,5 +36,9 @@ module LogParser
         #{page_views_list}
       OUTPUT
     end
+
+    private
+
+    attr_reader :storage
   end
 end

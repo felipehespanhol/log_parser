@@ -1,7 +1,5 @@
 module LogParser
   class Storage
-    attr_reader :page_views
-
     def initialize(page_views: [])
       @page_views = page_views
     end
@@ -23,6 +21,8 @@ module LogParser
     end
 
     private
+
+    attr_reader :page_views
 
     def page_views_by_path
       @page_views_by_path ||= page_views.group_by(&:path)
