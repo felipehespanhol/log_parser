@@ -22,8 +22,11 @@ module LogParser
 
     def parse_line(line_string)
       info = line_string.split(" ")
-      raise ParseError if info.size > 2
-      info
+      if info.empty? || info.size == 2
+        info
+      else
+        raise ParseError
+      end
     end
   end
 end
